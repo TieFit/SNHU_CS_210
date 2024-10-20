@@ -6,7 +6,7 @@
 
 using namespace std;
 
-// initialize variables for later use
+// declare variables and functions for later use
 BankInfo myInvestment;
 double initialInvestment;
 double monthlyDeposit;
