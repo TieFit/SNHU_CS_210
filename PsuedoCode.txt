@@ -1,0 +1,95 @@
+// JJ NEWELL 10-3-24
+
+--------------------------------------
+
+HEADER FILE
+
+--------------------------------------
+
+DECLARE BankInfo class {
+	SET public values
+
+	SET private values
+}
+
+--------------------------------------
+
+MAIN CPP FILE
+
+______________________________________
+
+SET header files (iostream, iomanip, using namespace std, header)	
+
+INITIALIZE variables that will be used later in program
+
+DECLARE accessors and mutators to retrieve info from BankInfo class
+
+CREATE function to display tableHeading info {
+	OUTPUT this information
+}
+
+CREATE function to calculate and output balance without a monthly deposit {
+	RETRIEVE info from BankInfo class
+	CALL tableHeading function to display header info
+	CALCULATE yearly interest and year end total
+	OUTPUT yearly interest and year end total
+}
+
+CREATE function to calculate and output balance with a monthly deposit {
+	RETRIEVE info from BankInfo class
+	CALL tableHeading function to display header info
+	CALCULATE yearly interest and year end total
+	OUTPUT yearly interest and year end total
+}
+
+CREATE function that will display the homescreen and also GET user input {
+	TRY
+		OUTPUT messages for formatting home screen header
+		INPUT validation for getting initialInvestment 
+		SET initialInvestment
+
+		INPUT validation for getting monthlyDeposit 
+		SET monthlyDeposit
+
+		INPUT validation for getting apy
+		SET apy
+
+		INPUT validation for getting years
+		SET years
+	}
+
+	CATCH (runtime_error& excpt) if user enters negative value {
+		OUTPUT "Enter a value that is not negative"
+		RESET homescreen to original state
+	}
+
+CREATE function to only accept an int as input {
+	WHILE(1) {
+		IF input > x
+			break
+		ELSE 
+			OUTPUT "Not a valid number, enter a valid number."
+	}
+}
+
+CREATE function to only accept a double as input {
+	WHILE(1) {
+		IF input > x
+			break
+		ELSE 
+			OUTPUT "Not a valid number, enter a valid number."
+	}
+}
+
+CREATE main function {
+	WHILE (input != 'q') && (input != 'Q') {
+		CLEAR SCREEN
+		CALL printHomeScreen function
+
+		CALL functions to CALCULATE and OUTPUT data WITHOUT monthly deposit
+		CALL functions to CALCULATE and OUTPUT data WITH monthly deposit
+
+		OUTPUT "Enter 'q' or "q" to end the program, enter any other character to run another report."
+		GET user_input
+	}
+}
